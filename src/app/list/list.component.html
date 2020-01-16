@@ -1,0 +1,23 @@
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Birth</th>
+            <th>#</th>
+            <th>#</th>
+       </tr>
+    </thead>
+        
+    <tbody>
+        <tr *ngFor="let user of loadedUsers">
+            <td>{{ user.idUser }}</td>
+            <td>{{ user.firstName + ' ' + user.lastName }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.birth }}</td>
+            <td><a th:href="@{/showUser} + '?id=' + ${user.idUser}">Modify</a></td>
+            <td><a th:href="@{/deleteUser} + '?id=' + ${user.idUser}">Delete</a></td>
+        </tr>
+    </tbody>
+</table>
